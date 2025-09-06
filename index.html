@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Journey</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Pacifico&display=swap');
+
+        :root {
+            --primary-color: #ff69b4; /* Pink */
+            --secondary-color: #ff1493; /* Deep Pink */
+            --text-color: #f0f0f0;
+            --bg-color: #1a1a2e; /* Dark Blue-Purple */
+            --card-bg: #2a2a4a;
+            --border-radius: 15px;
+            --transition-speed: 0.5s ease-in-out;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            line-height: 1.6;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUpFadeIn 0.8s forwards 0.3s;
+        }
+
+        @keyframes slideUpFadeIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1, h2 {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6);
+        }
+
+        .heart {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            transform: rotate(-45deg);
+            animation: floatHearts 6s infinite ease-in-out;
+            opacity: 0;
+            z-index: -1;
+        }
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 10px;
+        }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(0) rotate(-45deg) scale(0); opacity: 0; }
+            20% { opacity: 1; transform: translateY(-50px) rotate(-45deg) scale(1); }
+            100% { transform: translateY(-200px) rotate(-45deg) scale(1.2); opacity: 0; }
+        }
+
+        .heart.red { background-color: #ff0000; }
+        .heart.red::before, .heart.red::after { background-color: #ff0000; }
+        .heart.pink { background-color: var(--primary-color); }
+        .heart.pink::before, .heart.pink::after { background-color: var(--primary-color); }
+        .heart.small { transform: scale(0.6) rotate(-45deg); }
+        .heart.medium { transform: scale(0.8) rotate(-45deg); }
+        .heart.large { transform: scale(1) rotate(-45deg); }
+
+        .emoji {
+            font-size: 3em;
+            margin: 20px 0;
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="heart" style="left: 10%; top: 10%;">❤️</div>
+    <div class="heart" style="left: 20%; top: 20%;">❤️</div>
+    <div class="heart" style="left: 30%; top: 30%;">❤️</div>
+    <div class="heart" style="left: 40%; top: 40%;">❤️</div>
+    <div class="heart" style="left: 50%; top: 50%;">❤️</div>
+    <div class="heart" style="left: 60%; top: 60%;">❤️</div>
+    <div class="heart" style="left: 70%; top: 70%;">❤️</div>
+    <div class="heart" style="left: 80%; top: 80%;">❤️</div>
+    <div class="heart" style="left: 90%; top: 90%;">❤️</div>
+<div class="template template1" id="template1">
+    <h1>HEY IDIOT I AM GOING TO CONTINUE MY ARGUMENT </h1>
+    <p>💖💝😘</p>
+    <button class="OPEN" onclick="showTemplate(2)">OPEN</button>
+</div>
+
+<div class="template template2" id="template2">
+    <h1>❤️💖💔</h1>
+    <p>I ACTUALLY HATE U BECAUSE U DON'T GIVE ANY ATTENTION TO MY EFFORTS STUPID</p>
+    <button class="continue" onclick="showTemplate(3)">Continue</button>
+</div>
+
+<div class="template" id="template3">
+    <div class="box">
+        <h2>LOVE 💝😘</h2>
+        <p>I DON'T AT ALL LOVE U . YOU ALWAYS MAKES THE THINGS WHICH MAKES ME ANGER . BUT STILL I LOVES THE THINGS AND EFFORTS U PUT FOR MY HAPPINESS.</p>
+    </div>
+    <div class="box">
+        <h2>TIME ⏰😊</h2>
+        <p>U ARE GIVING THE ENOUGH TIME FOR ME. STILL U ARE GIVING ALL THE TIME TO ME EVEN U ARE TIRED AND THINKING A LOT TO SPEND A MORE TIME WITH ME.</p>
+    </div>
+    <div class="box">
+        <h2>EFFORTS 💪❤️</h2>
+        <p>U ARE NOT AT ALL PUTTING ANY EFFORTS FOR ME BUT STILL THE EFFORTS U PUT FOR ME TO MAKE MY DAY SPECIAL AND WITHOUT ANY TROUBLE IS REALLY THE WONDERFUL.</p>
+    </div>
+    <button class="continue" onclick="showTemplate(4)">Continue</button>
+</div>
+
+<div class="template" id="template4">
+    <div class="box">
+        <h2>ANGER 😡❤️‍🔥</h2>
+        <p>U SHOUT A LOT WHEN U ARE ANGER AND NEVER LISTEN TO MY WORDS AND U DON'T EVEN GIVE ME A RESPECT AND EVEN U DON'T PAMPER ME BUT STILL AFTER EVERY FIGHT U DON'T LEAVE ME ALONE FOR A SINGLE DAY AND ACCEPTS ALL UR MISTAKES.</p>
+	</div>
+ 
+
+    <div class="box">
+        <h2>POSSESSIVE 🫣😳❤️</h2>
+        <p>U DON'T HAVE A ANY POSSESSIVE FEELING U JUST ACT LIKE A ONE WHO DON'T EVEN CARE ME BUT STILL U CARES A LOT FOR ME.</p>
+    </div>
+    <button class="continue" onclick="showTemplate(5)">Continue</button>
+</div>
+
+<div class="template" id="template5">
+    <h1>Do you want to see our journey?</h1>
+    <button class="continue" onclick="showTemplate(6)">Yes</button>
+    <button class="continue" onclick="showNo()">No</button>
+</div>
+
+<div class="template" id="template6">
+    <h1>❤️💖</h1>
+    <p>THE FIRST PLACE WE MET IS THE COLLEGE </p>
+    <button class="continue" onclick="showTemplate(7)">Continue</button>
+</div>
+
+<div class="template" id="template7">
+    <h1>🏖️❤️</h1>
+    <p>THE FIRST PLACE WE WENT IS BEACH </p>
+    <button class="continue" onclick="showTemplate(8)">Continue</button>
+</div>
+
+<div class="template" id="template8">
+    <h1>😘👩‍❤️‍💋‍👨🫣</h1>
+    <p>I REALLY ENJOYED A LOT THERE AND THE PLACE WHERE U GAINED MY TRUST AND I STARTED BELIVING U </p>
+    <button class="continue" onclick="showTemplate(9)">Continue</button>
+</div>
+
+<div class="template" id="template9">
+    <h1>🎬💖</h1>
+    <p>THE SECOND PLACE WE WENT, I KNOW THIS PLACE IS FULL OF FIGHT BUT I LOVE IT AND ENJOYED A LOT WE WENT OUT EAT I LOVE THE PLACE 🍝 </p>
+    <button class="continue" onclick="showTemplate(10)">Continue</button>
+</div>
+
+<div class="template" id="template10">
+    <h1>😘👩‍❤️‍💋‍👨😘</h1>
+    <p>DO YOU REMEMBER THIS DAY WHEN WE WENT OUT TO KASU MALL, DMART WITH SRAVANI AND A SMALL RIDE.</p>
+    <button class="continue" onclick="showTemplate(11)">Continue</button>
+</div>
+
+<div class="template" id="template11">
+    <h1>🏍️👩‍❤️‍💋‍👨😘</h1>
+    <p>THIS DAY IS REALLY AWESOME BECAUSE I LOVE TO WALK AND WE WALKED A DISTANCE. I HAVE FUNNY MEMORIES AND SOME ANGRY SITUATIONS BUT I DON'T SAY U.</p>
+    <button class="continue" onclick="showTemplate(12)">Continue</button>
+</div>
+
+<div class="template" id="template12">
+    <h1>❤️👫💖</h1>
+    <p>THE NIGHT WALK WHICH I LOVE THE MOST, BUT THAT DAY WE BOTH HAD A FIGHT AND YOU DIDN'T EVEN SAY ME A SORRY AND SCOLDING ME THAT EAT AND LEAVE.</p>
+    <button class="continue" onclick="showTemplate(13)">Continue</button>
+</div>
+
+<div class="template" id="template13">
+    <h1>❤️💝💖</h1>
+    <p>THE NEXT IS TEMPLE VIBE WHERE I ENJOYED A LOT AND U GIFTED ME SOMETHING SPECIAL.</p>
+    <button class="continue" onclick="showTemplate(14)">Continue</button>
+</div>
+
+<div class="template" id="template14">
+    <h1>🌊😘👩‍❤️‍💋‍👨</h1>
+    <p>THE RECENT PLACE WE WENT IS WATERFALLS , I ENJOYED A LOT THROUGHOUT THE JOURNEY. THIS IS A WONDERFUL EXPERINCE.</p>
+    <button class="continue" onclick="showTemplate(15)">Continue</button>
+</div>
+
+<div class="template" id="template15">
+    <h1>❤️💖</h1>
+    <p>I ENJOYED EVERY PHASE WITH U A LOT.</p>
+    <button class="continue" onclick="showTemplate(16)">Continue</button>
+</div>
+
+<div class="template" id="template16">
+    <h1>❤️💖</h1>
+    <p>EACH AND EVERY DAY IS SPECIAL WITH U IDIOT I AM ENJOYING EVERY MOMENT WITH U.</p>
+    <button class="continue" onclick="showTemplate(17)">Continue</button>
+</div>
+
+<div class="template" id="template17">
+    <h1>😘😘</h1>
+    <p>THANK U IDIOT, STILL I HATE U A LOT FOR THE THINGS U DO.</p>
+    <button class="continue" onclick="showTemplate(1)">Restart</button>
+    </div>
+
+<div class="template" id="noTemplate">
+    <h1>😡😡WHY WILL U SEE GO AND ENJOY WITH LAHARI, LUX, SRAV, HIMAA. IDIOT STUPID THEY ARE IMPORTANT FOR U RIGHT 🐷.</h1>
+</div>
+
+<script>
+    function showTemplate(num) {
+        const templates = document.querySelectorAll('.template');
+        templates.forEach(template => template.style.display = 'none');
+        document.getElementById('template' + num).style.display = 'block';
+    }
+
+    function showNo() {
+        const templates = document.querySelectorAll('.template');
+        templates.forEach(template => template.style.display = 'none');
+        document.getElementById('noTemplate').style.display = 'block';
+    }
+
+    // Start with the first template
+    showTemplate(1);
+</script>
+
+</body>
+</html>
